@@ -11,19 +11,31 @@ public class MyGLRenderer implements GLSurfaceView.Renderer {
 
     private Triangulo m_triangulo;
     private Cuadrado m_cuadrado;
+    private Poligono m_poligono;
+    private TriangulosLocos m_trianguLocos;
+    private Castillo m_castillo;
+    private Castillo_Ventanas m_ventanas;
 
     @Override
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
-        GLES20.glClearColor(0.3f, 0.3f, 0.3f, 1f);
+        GLES20.glClearColor(1.0f, 1.0f, 1.0f, 1f);
         m_triangulo = new Triangulo();
         m_cuadrado = new Cuadrado();
+        m_poligono = new Poligono();
+        m_trianguLocos = new TriangulosLocos();
+        m_castillo = new Castillo();
+        m_ventanas = new Castillo_Ventanas();
     }
 
     @Override
     public void onDrawFrame(GL10 gl) {
         GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT);
         //m_triangulo.draw();
-        m_cuadrado.draw();
+        //m_cuadrado.draw();
+        //m_poligono.draw();
+        //m_trianguLocos.draw();
+        m_castillo.draw();
+        m_ventanas.draw();
     }
 
     @Override
